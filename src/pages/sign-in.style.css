@@ -1,0 +1,108 @@
+.containerSignIn {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.boxImageLerft {
+  width: 50%;
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.boxFormSignIn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 80px;
+
+  width: 50%;
+  height: 100%;
+}
+.formSignIn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.formSignInHeader span {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #000000;
+}
+.formSignInHeader h1 {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+
+  color: #000000;
+}
+.formSignInInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.formSignInInputs input {
+  width: 476px;
+  height: 51px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  border: none;
+
+  color: #968b8b;
+  background-color: white;
+}
+.formSignInButton button {
+  width: 475px;
+  height: 50px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  border: none;
+  border-radius: 8px;
+
+  transition: all 0.7s;
+
+  color: #ffffff;
+  background: #04c45c;
+}
+.formSignInButton button:hover {
+  opacity: 0.7;
+}
+
+.redirectSignUp p {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  text-align: center;
+
+  color: #000000;
+}
+.redirectSignUp p span {
+  transition: all 0.7s;
+  cursor: pointer;
+  color: #1972a8;
+}
+.redirectSignUp p span:hover {
+  opacity: 0.7;
+}
