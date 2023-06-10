@@ -1,0 +1,53 @@
+.tableHeaderBox {
+  display: grid;
+  grid-template-columns: 30% 30% 40%;
+  place-content: center;
+
+  height: 46px;
+  width: 100%;
+  padding-left: 5px;
+  margin-bottom: 20px;
+
+  background: #f4f0f0;
+}
+.tableHeaderBox span {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #1c1414;
+}
+.tableItemBox {
+  display: grid;
+  grid-template-columns: 30% 30% 30% 10%;
+  place-content: center;
+
+  height: 46px;
+  width: 100%;
+  padding-left: 5px;
+
+  background: #fffafa;
+}
+.tableItemBox span {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: rgba(28, 20, 20, 0.79);
+}
+.tableItemBox div {
+  display: flex;
+  gap: 20px;
+}
+.tableItemBox div img {
+  cursor: pointer;
+  transition: all 0.9s;
+}
+.tableItemBox div img:hover {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
