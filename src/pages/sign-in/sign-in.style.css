@@ -1,44 +1,58 @@
-.containerSignUp {
+.containerSignIn {
   display: flex;
   width: 100vw;
   height: 100vh;
 }
+.boxImageLerft {
+  width: 50%;
+  height: 100%;
 
-.boxFormSignUp {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.boxFormSignIn {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 70px;
+  gap: 80px;
 
   width: 50%;
   height: 100%;
 }
-.formSignUp {
+.formSignIn {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 30px;
 }
-.formSignUpHeader h2 {
+.formSignInHeader span {
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
-  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
 
   color: #000000;
 }
-.formSignUpInputs {
+.formSignInHeader h1 {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+
+  color: #000000;
+}
+.formSignInInputs {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.formSignUpInputs input {
+.formSignInInputs input {
   width: 476px;
   height: 51px;
+  padding-left: 5px;
 
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -51,13 +65,8 @@
   color: #968b8b;
   background: #fdfafa;
 }
-.formSignUpButtons {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.formSignUpButtons button {
-  width: 478px;
+.formSignInButton button {
+  width: 475px;
   height: 50px;
 
   font-family: "Roboto", sans-serif;
@@ -65,48 +74,36 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
-
   text-align: center;
 
-  border-radius: 8px;
   border: none;
+  border-radius: 8px;
 
   transition: all 0.7s;
 
   color: #ffffff;
-}
-.formSignUpButtons button:hover {
-  opacity: 0.7;
-}
-#register {
   background: #04c45c;
 }
-#cancel {
-  background: rgba(251, 6, 21, 0.65);
+.formSignInButton button:hover {
+  opacity: 0.7;
 }
-.redirectSignIn p {
+
+.redirectSignUp p {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
+
   text-align: center;
 
   color: #000000;
 }
-.redirectSignIn p span {
+.redirectSignUp p span {
   transition: all 0.7s;
   cursor: pointer;
   color: #1972a8;
 }
-.redirectSignIn p span:hover {
+.redirectSignUp p span:hover {
   opacity: 0.7;
-}
-
-.boxImageRight {
-  width: 50%;
-  height: 100%;
-
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 }

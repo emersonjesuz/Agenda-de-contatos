@@ -1,4 +1,4 @@
-import imageLeft from "../assets/ImagemEsquerda.png";
+import imageLeft from "../../assets/ImagemEsquerda.png";
 import "./sign-in.style.css";
 
 export default function SignIn() {

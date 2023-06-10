@@ -1,5 +1,5 @@
 import "./sign-up.style.css";
-import imageRight from "../assets/ImagemDireita.png";
+import imageRight from "../../assets/ImagemDireita.png";
 
 export default function SignUp() {
   return (
