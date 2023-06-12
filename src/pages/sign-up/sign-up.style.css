@@ -53,6 +53,9 @@
   color: #968b8b;
   background: #fdfafa;
 }
+.showAlert {
+  color: red;
+}
 .formSignUpButtons {
   display: flex;
   flex-direction: column;
@@ -96,12 +99,13 @@
 
   color: #000000;
 }
-.redirectSignIn p span {
+.redirectSignIn p a {
   transition: all 0.7s;
   cursor: pointer;
   color: #1972a8;
+  text-decoration: none;
 }
-.redirectSignIn p span:hover {
+.redirectSignIn p a:hover {
   opacity: 0.7;
 }
 

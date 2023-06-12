@@ -21,9 +21,9 @@ export const router = createBrowserRouter(
       <Route path="/" element={<SignIn />} />
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/sign-up" element={<SignUp />} />
-      {/* <Route element={<ProtectRoute redirecTo={"/"} />}> */}
-      <Route path="/home" element={<Home />} />
-      {/* </Route> */}
+      <Route element={<ProtectRoute redirecTo={"/"} />}>
+        <Route path="/home" element={<Home />} />
+      </Route>
     </>
   )
 );
