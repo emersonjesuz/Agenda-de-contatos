@@ -1,13 +1,17 @@
 import "./deleteContact.style.css";
 import "../modalStyleGlobal/modalStyleGlobal.css";
 import btnCloseX from "../../../assets/btnClose-X.svg";
+import { useContext } from "react";
+import CreateContext from "../../../context/ceateContext";
 
-export default function ModalDeleteContact({ id, nome }) {
+export default function ModalDeleteContact() {
+  const { setShowModalDelete } = useContext(CreateContext);
   return (
     <div className="containerModal">
       <div className="ModalDeleteContactBox">
         <img
           className="btnCloseX"
+          onClick={() => setShowModalDelete(false)}
           src={btnCloseX}
           alt="butao de sair do modal"
         />
@@ -19,7 +23,12 @@ export default function ModalDeleteContact({ id, nome }) {
         </div>
         <div className="modalButtonsDeleteContact">
           <button id="btnModalExcluir">EXCLUIR</button>
-          <button id="btnModalCancelar">CANCELAR</button>
+          <button
+            onClick={() => setShowModalDelete(false)}
+            id="btnModalCancelar"
+          >
+            CANCELAR
+          </button>
         </div>
       </div>
     </div>
