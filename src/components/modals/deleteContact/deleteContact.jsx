@@ -3,9 +3,23 @@ import "../modalStyleGlobal/modalStyleGlobal.css";
 import btnCloseX from "../../../assets/btnClose-X.svg";
 import { useContext } from "react";
 import CreateContext from "../../../context/ceateContext";
+import Axios from "../../../connecting-API/axios";
+import { localStorageClearItem } from "../../../utils/localStorage";
 
 export default function ModalDeleteContact() {
-  const { setShowModalDelete } = useContext(CreateContext);
+  const { token, setShowModalDelete, contactId } = useContext(CreateContext);
+
+  async function deleteContact() {
+    try {
+      Axios.delete(`/contatos/${contactId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setShowModalDelete(false);
+    } catch (error) {
+      localStorageClearItem();
+    }
+  }
+
   return (
     <div className="containerModal">
       <div className="ModalDeleteContactBox">
@@ -22,7 +36,9 @@ export default function ModalDeleteContact() {
           <p>Deseja excluir o contato,{"Daniel Lopes"}?</p>
         </div>
         <div className="modalButtonsDeleteContact">
-          <button id="btnModalExcluir">EXCLUIR</button>
+          <button onClick={deleteContact} id="btnModalExcluir">
+            EXCLUIR
+          </button>
           <button
             onClick={() => setShowModalDelete(false)}
             id="btnModalCancelar"

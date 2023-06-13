@@ -1,11 +1,35 @@
 import "./tableContact.style.css";
 import imageEdit from "../../assets/btnEdit.svg";
 import imageTrash from "../../assets/btnTrash.svg";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CreateContext from "../../context/ceateContext";
+import Axios from "../../connecting-API/axios";
+import { localStorageClearItem } from "../../utils/localStorage";
 
 export default function TableContact() {
-  const { setShowModalContact, setShowModalDelete } = useContext(CreateContext);
+  const {
+    token,
+    setShowModalContact,
+    setShowModalDelete,
+    listDataContact,
+    setListDataContact,
+    setContactId,
+  } = useContext(CreateContext);
+
+  async function listContact() {
+    try {
+      const list = await Axios.get("/contatos", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setListDataContact(list.data);
+    } catch (error) {
+      localStorageClearItem();
+    }
+  }
+
+  useEffect(() => {
+    listContact();
+  }, [listDataContact]);
   return (
     <>
       <div className="tableHeaderBox">
@@ -13,23 +37,31 @@ export default function TableContact() {
         <span>Email</span>
         <span>Telefone</span>
       </div>
-      <div className="tableItemBox">
-        <span>Claudia M. Sousa</span>
-        <span>claudia@teste.com.br</span>
-        <span>(99)9999-9999</span>
-        <div>
-          <img
-            onClick={() => setShowModalContact(true)}
-            src={imageEdit}
-            alt="butao de edicão"
-          />
-          <img
-            onClick={() => setShowModalDelete(true)}
-            src={imageTrash}
-            alt="butao de apagar"
-          />
+      {listDataContact.map((dataList) => (
+        <div key={dataList.id} className="tableItemBox">
+          <span>{dataList.nome}</span>
+          <span>{dataList.email}</span>
+          <span>{dataList.telefone}</span>
+          <div>
+            <img
+              onClick={() => {
+                setContactId(dataList.id);
+                setShowModalContact(true);
+              }}
+              src={imageEdit}
+              alt="butao de edicão"
+            />
+            <img
+              onClick={() => {
+                setContactId(dataList.id);
+                setShowModalDelete(true);
+              }}
+              src={imageTrash}
+              alt="butao de apagar"
+            />
+          </div>
         </div>
-      </div>
+      ))}
     </>
   );
 }

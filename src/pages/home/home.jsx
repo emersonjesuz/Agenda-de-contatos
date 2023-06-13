@@ -14,10 +14,16 @@ import CreateContext from "../../context/ceateContext";
 export default function Home() {
   const [showModalDelete, setShowModalDelete] = useState(false);
   const [showModalContact, setShowModalContact] = useState(false);
-  const [contact, setContact] = useState([]);
+  const [listDataContact, setListDataContact] = useState([]);
+  const [contactId, setContactId] = useState("");
 
   const navegate = useNavigate();
   const token = localStorageGetItem("token");
+
+  function showBtnAdd() {
+    setContactId("");
+    setShowModalContact(true);
+  }
 
   function haveToken() {
     if (!token) {
@@ -27,17 +33,19 @@ export default function Home() {
 
   useEffect(() => {
     haveToken();
-    console.log("ola");
   });
   return (
     <CreateContext.Provider
       value={{
+        token,
         showModalContact,
         setShowModalContact,
         showModalDelete,
         setShowModalDelete,
-        contact,
-        setContact,
+        listDataContact,
+        setListDataContact,
+        contactId,
+        setContactId,
       }}
     >
       <div className="containerHome">
@@ -56,7 +64,7 @@ export default function Home() {
         </header>
         <main>
           <div className="mainBtnAddBox">
-            <button onClick={() => setShowModalContact(true)}>Adicionar</button>
+            <button onClick={showBtnAdd}>Adicionar</button>
           </div>
           <div className="mainTableBox">
             <TableContact />

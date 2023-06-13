@@ -5,6 +5,7 @@ import {
   Outlet,
   Route,
 } from "react-router-dom";
+import ErrorPage404 from "../error/error404";
 import Home from "../pages/home/home";
 import SignIn from "../pages/sign-in/sign-in";
 import SignUp from "../pages/sign-up/sign-up";
@@ -24,6 +25,7 @@ export const router = createBrowserRouter(
       <Route element={<ProtectRoute redirecTo={"/"} />}>
         <Route path="/home" element={<Home />} />
       </Route>
+      <Route path="*" element={<ErrorPage404 />} />
     </>
   )
 );

@@ -1,0 +1,19 @@
+.containerError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgb(196, 199, 201);
+}
+
+.containerError h1,
+.containerError p {
+  font-size: 80px;
+}
+.containerError span {
+  color: rgb(224, 49, 49);
+}
