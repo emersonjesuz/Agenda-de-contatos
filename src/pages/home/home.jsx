@@ -16,6 +16,7 @@ export default function Home() {
   const [showModalContact, setShowModalContact] = useState(false);
   const [listDataContact, setListDataContact] = useState([]);
   const [contactId, setContactId] = useState("");
+  const [contactName, setContactName] = useState("");
 
   const navegate = useNavigate();
   const token = localStorageGetItem("token");
@@ -46,6 +47,8 @@ export default function Home() {
         setListDataContact,
         contactId,
         setContactId,
+        contactName,
+        setContactName,
       }}
     >
       <div className="containerHome">

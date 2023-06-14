@@ -7,8 +7,8 @@
 
   position: relative;
 
-  width: 476px;
-  height: 319px;
+  width: 47.6rem;
+  height: 31.9rem;
 
   background: #fffdfd;
   border-radius: 8px;
@@ -18,8 +18,8 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
   text-align: center;
 
   color: #000000;
@@ -28,8 +28,8 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
   text-align: center;
 
   color: #000000;
@@ -37,17 +37,18 @@
 .modalButtonsDeleteContact {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
+  width: 80%;
 }
 .modalButtonsDeleteContact button {
-  width: 364px;
-  height: 50px;
+  width: 100%;
+  height: 5rem;
 
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
 
   text-align: center;
 
@@ -66,4 +67,10 @@
 }
 #btnModalCancelar {
   background: rgba(251, 6, 21, 0.65);
+}
+
+@media (max-width: 630px) {
+  .ModalDeleteContactBox {
+    width: 100%;
+  }
 }

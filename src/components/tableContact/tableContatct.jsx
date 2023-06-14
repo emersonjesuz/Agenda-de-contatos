@@ -14,6 +14,7 @@ export default function TableContact() {
     listDataContact,
     setListDataContact,
     setContactId,
+    setContactName,
   } = useContext(CreateContext);
 
   async function listContact() {
@@ -25,6 +26,12 @@ export default function TableContact() {
     } catch (error) {
       localStorageClearItem();
     }
+  }
+
+  function showDelete(dataList) {
+    setContactName(dataList.nome);
+    setContactId(dataList.id);
+    setShowModalDelete(true);
   }
 
   useEffect(() => {
@@ -52,10 +59,7 @@ export default function TableContact() {
               alt="butao de edicão"
             />
             <img
-              onClick={() => {
-                setContactId(dataList.id);
-                setShowModalDelete(true);
-              }}
+              onClick={() => showDelete(dataList)}
               src={imageTrash}
               alt="butao de apagar"
             />

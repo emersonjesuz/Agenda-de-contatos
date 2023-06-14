@@ -2,6 +2,8 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+
+  position: relative;
 }
 .boxImageLerft {
   width: 50%;
@@ -24,14 +26,14 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 3rem;
 }
 .formSignInHeader span {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
 
   color: #000000;
 }
@@ -39,26 +41,26 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
 
   color: #000000;
 }
 .formSignInInputs {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 }
 .formSignInInputs input {
-  width: 476px;
-  height: 51px;
+  width: 47.6rem;
+  height: 5.1rem;
   padding-left: 5px;
 
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
 
   border: 1px solid #e8e8e8;
 
@@ -66,14 +68,14 @@
   background: #fdfafa;
 }
 .formSignInButton button {
-  width: 475px;
-  height: 50px;
+  width: 47.5rem;
+  height: 5rem;
 
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   text-align: center;
 
   border: none;
@@ -92,8 +94,8 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
 
   text-align: center;
 
@@ -107,4 +109,32 @@
 }
 .redirectSignUp p a:hover {
   opacity: 0.7;
+}
+
+@media (max-width: 1130px) {
+  .containerSignIn {
+    justify-content: center;
+  }
+  .boxImageLerft {
+    position: absolute;
+    width: 100%;
+    opacity: 0.4;
+  }
+  .boxFormSignIn {
+    z-index: 2;
+    width: 80%;
+  }
+  .formSignIn {
+    width: 50%;
+  }
+  .formSignInInputs input,
+  .formSignInButton button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 630px) {
+  .formSignIn {
+    width: 90%;
+  }
 }

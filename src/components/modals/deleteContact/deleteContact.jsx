@@ -7,7 +7,8 @@ import Axios from "../../../connecting-API/axios";
 import { localStorageClearItem } from "../../../utils/localStorage";
 
 export default function ModalDeleteContact() {
-  const { token, setShowModalDelete, contactId } = useContext(CreateContext);
+  const { token, setShowModalDelete, contactId, contactName } =
+    useContext(CreateContext);
 
   async function deleteContact() {
     try {
@@ -33,7 +34,7 @@ export default function ModalDeleteContact() {
           <h2>Confirma a exclusão?</h2>
         </div>
         <div className="modalTextDeleteContact">
-          <p>Deseja excluir o contato,{"Daniel Lopes"}?</p>
+          <p>Deseja excluir o contato, {contactName}?</p>
         </div>
         <div className="modalButtonsDeleteContact">
           <button onClick={deleteContact} id="btnModalExcluir">
